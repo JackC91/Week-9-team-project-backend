@@ -9,13 +9,17 @@ export async function getAllList() {
 };
 
 //model for POST to named table
-//Remove values from SQL strings to prevent malicious injection
-export async function postToList({content}) {
-    console.log(content)
-   const data = await query(`INSERT INTO computational_thinking (user_id, task, is_complete) VALUES (1, $1, 'false');`, [content.task]);
+//WE have removed values from SQL strings to prevent malicious injection
+// computational_thinking table will need to be a variable sourced from react front end 
+
+export async function postToList({reqData}) {
+   const data = await query(`INSERT INTO computational_thinking (user_id, task, is_complete) VALUES (1, $1, 'false');`, [reqData.task]);
     return data;
 };
-
 //model for PATCH to named table
 
 //model for DELETE from named table
+ export async function deleteFromList ({reqData}){
+     const data = await query(`DELETE FROM computational_thinking WHERE task_id = $1;`, [reqData.task_id]);
+    return data;
+    }  
