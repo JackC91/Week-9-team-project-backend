@@ -20,8 +20,9 @@ router.get("/computational_thinking", async function(req, res){
 
 //route URI to POST to named table
 router.post("/computational_thinking", async function(req, res){
-    //const content = req.body;
-    await postToList();
+    const content = req.body.user_id;
+    res.json({content});
+    console.log(content)
     //res.json({})
 })
 

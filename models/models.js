@@ -11,7 +11,7 @@ export async function getAllList() {
 //model for POST to named table
 //Remove values from SQL strings to prevent malicious injection
 export async function postToList() {
-    await query(`INSERT INTO computational_thinking (user_id, task, is_complete) VALUES (1, "test task", false);`);
+    await query(`INSERT INTO computational_thinking (user_id) VALUES (1);`);
 };
 
 //model for PATCH to named table
