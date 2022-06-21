@@ -9,7 +9,7 @@ const sqlString = `CREATE TABLE IF NOT EXISTS computational_thinking (
 
  async function createNewTable() {
     const res = await query(sqlString);
-  console.log(res, "table created");
+  console.log(res.command, "table created");
 } 
 
 createNewTable();
