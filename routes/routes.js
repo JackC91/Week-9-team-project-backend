@@ -29,6 +29,13 @@ router.post("/computational_thinking", async function(req, res){
 })
 
 //route URI to PATCH to named table
+router.patch("/computational_thinking", async function(req, res){
+    const reqData = req.body;
+    const deleteTask = await deleteFromList({reqData});
+    res.json({ success: true,
+            message: "row deleted",
+               payload: deleteTask});
+})
 
 
 //route URI to DELETE from named table

@@ -20,6 +20,6 @@ export async function postToList({reqData}) {
 
 //model for DELETE from named table
  export async function deleteFromList ({reqData}){
-     const data = await query(`DELETE FROM computational_thinking WHERE task_id = $1;`, [reqData.task_id]);
+     const data = await query(`DELETE FROM computational_thinking WHERE task_id = $1 RETURNING *;`, [reqData.task_id]);
     return data;
     }  
