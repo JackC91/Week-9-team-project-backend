@@ -12,7 +12,7 @@ export async function getAllList() {
 //Remove values from SQL strings to prevent malicious injection
 export async function postToList({content}) {
     console.log(content)
-   const data = await query(`INSERT INTO computational_thinking (user_id, task, is_complete) VALUES (1, '${content.task}', 'false');`);
+   const data = await query(`INSERT INTO computational_thinking (user_id, task, is_complete) VALUES (1, $1, 'false');`, [content.task]);
     return data;
 };
 
