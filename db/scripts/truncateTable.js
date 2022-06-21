@@ -1,7 +1,7 @@
 import { query } from "../index.js"
 
-
-const sqlString = 'TRUNCATE TABLE ;'
+//Hard code and run script for each topic in app
+const sqlString = 'TRUNCATE TABLE computational_thinking;'
 
 async function truncateTable() {
     const res = await query(sqlString);

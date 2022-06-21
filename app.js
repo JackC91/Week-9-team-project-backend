@@ -6,10 +6,6 @@ import router from "./routes/routes.js";
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
 app.use("/", router);
 
 app.listen(port, () => {

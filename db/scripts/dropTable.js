@@ -1,5 +1,6 @@
 import { query } from "../index.js";
 
+//Hard code and run script for each topic in app if need to delete
 const sqlString = `DROP TABLE computational_thinking;`;
 
  async function dropTable() {
