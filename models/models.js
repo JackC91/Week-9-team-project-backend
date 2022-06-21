@@ -17,6 +17,10 @@ export async function postToList({reqData}) {
     return data;
 };
 //model for PATCH to named table
+export async function editCompleteStatus({reqData}) {
+    const data = await query(`UPDATE computational_thinking SET is_complete = NOT is_complete WHERE task_id = $1;`, [reqData.task_id]);
+    return data;
+}
 
 //model for DELETE from named table
  export async function deleteFromList ({reqData}){

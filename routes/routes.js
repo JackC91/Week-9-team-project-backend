@@ -6,7 +6,7 @@ import express from "express";
 const router = express.Router();
 
 //model for GET/POST
-import { deleteFromList, getAllList, postToList } from "../models/models.js";
+import { deleteFromList, getAllList, postToList, editCompleteStatus } from "../models/models.js";
 
 //route URI to GET all from named table
 router.get("/computational_thinking", async function(req, res){
@@ -31,10 +31,10 @@ router.post("/computational_thinking", async function(req, res){
 //route URI to PATCH to named table
 router.patch("/computational_thinking", async function(req, res){
     const reqData = req.body;
-    const deleteTask = await deleteFromList({reqData});
+    const updateTask = await editCompleteStatus({reqData});
     res.json({ success: true,
-            message: "row deleted",
-               payload: deleteTask});
+            message: "status updated",
+               payload: updateTask});
 })
 
 
