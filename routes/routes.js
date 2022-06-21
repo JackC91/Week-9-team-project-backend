@@ -5,8 +5,8 @@ import express from "express";
 
 const router = express.Router();
 
-//model for GET all from named table
-import { getAllList } from "../models/models.js";
+//model for GET/POST
+import { getAllList, postToList } from "../models/models.js";
 
 //route URI to GET all from named table
 router.get("/computational_thinking", async function(req, res){
@@ -19,6 +19,11 @@ router.get("/computational_thinking", async function(req, res){
     });
 
 //route URI to POST to named table
+router.post("/computational_thinking", async function(req, res){
+    //const content = req.body;
+    await postToList();
+    //res.json({})
+})
 
 //route URI to PATCH to named table
 
