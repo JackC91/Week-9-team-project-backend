@@ -18,6 +18,13 @@ router.get("/computational_thinking", async function(req, res){
       })
     });
 
+//TEST ROUTE FOR FRONT END
+// router.get("/test_route", async function(req, res){
+//       res.json({
+//           message : "Test successful",
+//       })
+//     });
+
 //route URI to POST to named table
 // computational_thinking will need to be changed to a variable for the table name at hand.
 // req.body will be handed in as a fetch request from the front end using e.target.value
