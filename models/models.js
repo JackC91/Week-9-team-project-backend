@@ -12,7 +12,7 @@ export async function getAllList() {
 //WE have removed values from SQL strings to prevent malicious injection
 // computational_thinking table will need to be a variable sourced from react front end 
 export async function postToList({reqData}) {
-   const data = await query(`INSERT INTO user_table (user_id, task, is_complete, topic) VALUES (1, $1, 'false', 'HTML');`, [reqData.task]);
+   const data = await query(`INSERT INTO user_table (user_id, task, is_complete, topic) VALUES (1, $1, 'false', $2);`, [reqData.task, reqData.topic]);
     return data;
 };
 
