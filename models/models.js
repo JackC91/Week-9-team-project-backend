@@ -4,7 +4,7 @@ import { query } from "../db/index.js";
 
 //model for GET all from named table
 export async function getAllList() {
-    const result = await query(`SELECT * FROM user_table;`);
+    const result = await query(`SELECT * FROM user_table ORDER BY task_id ASC;`);
     return result
 };
 
