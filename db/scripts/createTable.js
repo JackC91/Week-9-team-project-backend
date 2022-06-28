@@ -1,6 +1,5 @@
 import { query } from "../index.js";
 
-//Hard code and run script for each topic in app
 const sqlString = `CREATE TABLE IF NOT EXISTS user_table (
     user_id INT,
     task_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,

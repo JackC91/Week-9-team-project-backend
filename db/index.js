@@ -1,8 +1,6 @@
+import pg from "pg"; 
 
-import pg from "pg"; //pulled from modules is postgres
-
-// pools will use environment variables
-// for connection information
+// pools will use environment variables for connection information to keep credentials off of GitHub
  const pool = new pg.Pool({
     user: process.env.PGUSER,
     host:process.env.PGHOST,
