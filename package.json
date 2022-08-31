@@ -9,8 +9,7 @@
     "start": "nodemon -r dotenv/config app.js",
     "db:createTable": "node -r dotenv/config ./db/scripts/createTable.js",
     "db:dropTable": "node -r dotenv/config ./db/scripts/dropTable.js",
-    "db:truncateTable": "node -r dotenv/config ./db/scripts/truncateTable.js",
-    "heroku-postbuild": "npm install && npm run build"
+    "db:truncateTable": "node -r dotenv/config ./db/scripts/truncateTable.js"
   },
   "repository": {
     "type": "git",
